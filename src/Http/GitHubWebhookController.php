@@ -14,11 +14,6 @@ class GitHubWebhookController {
 
 		$payload = $request->getContent();
 
-		if ( ! $payload)
-		{
-			return new JsonResponse(['msg' => 'No Payload'], 500);
-		}
-
 		if ( ! $this->validateSignature($payload, $signature))
 		{
 			return new JsonResponse(['msg' => 'Invalid Payload'], 500);
@@ -30,7 +25,6 @@ class GitHubWebhookController {
 		{
 			case 'deployment':
 				return $this->processDeployment($payload);
-				break;
 		}
 	}
 
