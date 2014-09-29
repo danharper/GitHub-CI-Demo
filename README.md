@@ -1,0 +1,1 @@
+A small [Silex](http://silex.sensiolabs.org) app for handling GitHub WebHooks and auto-deploying InventoryBase.
